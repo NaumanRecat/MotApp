@@ -2,7 +2,7 @@ import React from "react";
 import {Image, Text, TextInput, View} from 'react-native';
 import {widthPercentageToDP as w, heightPercentageToDP as h} from 'react-native-responsive-screen';
 
-const Input =()=>{
+const Input =(props)=>{
     return(
        <View> 
       <View style={{
@@ -13,7 +13,7 @@ const Input =()=>{
             width:w('85%'),
             borderWidth:1,
             borderRadius: h('1%'),
-        }} placeholder="Type your text here"/>
+        }} placeholder={props.Text} onChangeText={props.onChangeText} />
       </View>
        </View>
     )

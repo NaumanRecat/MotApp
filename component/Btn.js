@@ -2,12 +2,13 @@ import React from "react";
 import {Button, Image, Text, TextInput, TouchableOpacity, View} from 'react-native';
 import {widthPercentageToDP as w, heightPercentageToDP as h} from 'react-native-responsive-screen';
 
-const Btn =()=>{
+const Btn =(props)=>{
     return(
       <View style={{
         alignItems:'center',
+        
       }}>
-        <TouchableOpacity style={{
+        <TouchableOpacity onPress={props.onPress} style={{
           borderWidth:1,
           height: h('6%'),
           width:w('85%'),
@@ -16,7 +17,7 @@ const Btn =()=>{
           justifyContent:'center',
           backgroundColor:'black'
         }}>
-          <Text style={{ color: 'white'}}> Login</Text>
+          <Text style={{ color: 'white'}}> {props.Text} </Text>
         </TouchableOpacity>
       </View>
     )

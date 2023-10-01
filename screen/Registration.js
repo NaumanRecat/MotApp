@@ -6,18 +6,18 @@ import Btn from "../component/Btn";
 
 const Registration =()=>{
     return(
-        <View style={{height: h('100%'), width:w('100%'), paddingLeft: w('8%'), paddingRight: w('8%'), marginTop: h('7%')}}>
+        <View style={{height: h('100%'), width:w('100%'), paddingLeft: w('8%'), paddingRight: w('8%'), marginTop: h('2%')}}>
             <Text style={{ fontSize: 30, fontWeight:'900'}} > Registration </Text>
             <Text style={{ marginTop: h('3%'), marginBottom:h('3%')}}> And start taking notes </Text>
             <Text style={{marginBottom: h('1%')}}> Full Name</Text>
-            <Input/>
+            <Input Text={'Type your name'}/>
             <Text style={{ marginTop:h('3%'), marginBottom:h('1%')}}> Email Address</Text>
-            <Input/>
+            <Input Text={'Type your email'}/>
             <Text style={{ marginTop:h('3%'), marginBottom:h('1%')}}> Password</Text>
-            <Input/>
+            <Input Text={'Type your Password'}/>
             <Text style={{ marginTop:h('3%'), marginBottom:h('1%')}}> Retype Password</Text>
-            <Input/>
-            <View style={{ marginTop:h('3%')}}><Btn/></View>
+            <Input Text={'Type your Retype Password'}/>
+            <View style={{ marginTop:h('3%')}}><Btn Text={'Registration'} /></View>
             <Text style={{marginTop:h('3%'), marginBottom:h('2%'), textAlign:'center'}} > Or</Text>
             <Text style={{textAlign:'center', fontWeight:'bold'}}> Alredy have an account? Login here</Text>
              
