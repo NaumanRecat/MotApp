@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { View, Image, StyleSheet } from "react-native";
 import {widthPercentageToDP as w, heightPercentageToDP as h} from 'react-native-responsive-screen';
 
 const SplashScreen =()=>{
+
   return(
     <View style={styles.container}>
     <View style={styles.wrap}>
@@ -17,7 +18,7 @@ const styles = StyleSheet.create({
     },
     wrap:{
         alignItems:'center',
-        marginTop: h('24%'),
+        marginTop: h('15%'),
     },
     img:{
         width: w('50%'),

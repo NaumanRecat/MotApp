@@ -11,13 +11,17 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 const Stack = createNativeStackNavigator();
 
-const App =()=>{
+const App = () => {
 
-  return(
+  return (
     <NavigationContainer>
       <Stack.Navigator>
-      <Stack.Screen name="LoginScreen" component={LoginScreen} />
-      <Stack.Screen name="Registration" component={Registration} />
+        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+        <Stack.Screen name="Welcome1" component={Welcome1} />
+        <Stack.Screen name="Welcome2" component={Welcome2} />
+        <Stack.Screen name="Welcome3" component={Welcome3} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} />
+        <Stack.Screen name="Registration" component={Registration} />
       </Stack.Navigator>
     </NavigationContainer>
   )

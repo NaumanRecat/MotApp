@@ -10,9 +10,9 @@ const LoginScreen =(props)=>{
         <View ><Text style={{ fontSize: 30, fontWeight:'900'}}> Let's Login</Text></View>
         <Text style={{ marginTop: h('3%'), marginBottom:h('3%')}}>Add notes to your idea</Text>
         <Text style={{marginBottom: h('1%',)}}>Email Address</Text>
-        <Input/>
+        <Input Text={'Type your email'}/>
         <Text style={{ marginTop:h('3%'), marginBottom:h('1%')}}>Password</Text>
-        <Input/>
+        <Input Text={'Type your password'}/>
         <Text style={{ marginTop:h('2%'), marginBottom:h('4%'), fontWeight:'bold'}}> Forgot Password</Text>
         <Btn Text={'Login'} onPress={()=>props.navigation.navigate('Registration')} />
         <Text style={{marginTop:h('3%'), marginBottom:h('2%'), textAlign:'center'}} > Or</Text>
