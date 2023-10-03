@@ -8,6 +8,7 @@ import LoginScreen from "./screen/LoginScreen";
 import Registration from './screen/Registration';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TabNav from './screen/TabNav';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name="TabNav" component={TabNav} options={{ headerShown: false }}/>
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
         <Stack.Screen name="Welcome1" component={Welcome1} />
         <Stack.Screen name="Welcome2" component={Welcome2} />
