@@ -10,6 +10,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNav from './screen/TabNav';
 import TopNavBar from './screen//TopNavBar';
+import AddNotes from './screen/AddNotes';
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,7 @@ const App = () => {
         <Stack.Screen name="Welcome3" component={Welcome3} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="Registration" component={Registration} />
+        <Stack.Screen name="AddNotes" component={AddNotes} />
       </Stack.Navigator>
     </NavigationContainer>
   )

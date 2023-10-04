@@ -13,20 +13,10 @@ const TabNav =()=> {
   return (
  
       <Tab.Navigator>
-        <Tab.Screen name="TopNavBar" component={TopNavBar} options={{ headerShown: false }}/>
-        <Tab.Screen name="Home" component={Home} options={{ headerShown: false }}/>
+        <Tab.Screen name="Home" component={TopNavBar} options={{ headerShown: false }}/>
         <Tab.Screen name="Recipients" component={Recipients} options={{ headerShown: false }}/>
         <Tab.Screen name="Search" component={Search} options={{ headerShown: false }}/>
         <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }}/>
-        {/* <Tab.Screen name="Home" component={Home}
-        options={{
-          tabBarLabel: 'Updates',
-          tabBarIcon: ({ color, size }) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
-          ),
-          tabBarBadge: 5 ,
-        }}
-      /> */}
       </Tab.Navigator>
 
   );
