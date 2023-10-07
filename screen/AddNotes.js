@@ -1,29 +1,35 @@
-import React, { useState } from "react";
-import {
-  View,
-  Text,
-  Button,
-  TouchableOpacity,
-  TextInput,
-} from "react-native";
-import {
-  widthPercentageToDP as w,
-  heightPercentageToDP as h,
-} from "react-native-responsive-screen";
-import {Notes} from "./Notes";
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, TextInput } from "react-native";
+import { widthPercentageToDP as w, heightPercentageToDP as h } from "react-native-responsive-screen";
 
+const AddNotes = ({ navigation, route }) => {
+  // Retrieve existing data or initialize with an empty array
+  const existingData = route.params?.data || [];
 
+  // Retrieve the initial values for title and notes
+  const initialTitle = route.params?.title || "";
+  const initialNotes = route.params?.notes || "";
 
-const AddNotes = ({ navigation }) => {
-  const [title, setTitle] = useState("");
-  const [notes, setNotes] = useState("");
+  const [title, setTitle] = useState(initialTitle);
+  const [notes, setNotes] = useState(initialNotes);
+
+  // Check if resetInputs flag is set
+  useEffect(() => {
+    if (route.params?.resetInputs) {
+      setTitle("");
+      setNotes("");
+    }
+  }, [route.params]);
 
   const handleSave = () => {
     // Create an object with the input data
-    const data = { title, notes };
+    const newData = { title, notes };
 
-    // Navigate to the second screen and pass the data as a parameter
-    navigation.navigate("Notes", { data });
+    // Combine the new data with the existing data
+    const updatedData = [...existingData, newData];
+
+    // Navigate back to the "Notes" screen with the updated data
+    navigation.navigate("Notes", { data: updatedData });
   };
 
   return (
