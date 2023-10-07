@@ -11,6 +11,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TabNav from './screen/TabNav';
 import TopNavBar from './screen//TopNavBar';
 import AddNotes from './screen/AddNotes';
+import Notes from "./screen/Notes";
 
 const Stack = createNativeStackNavigator();
 
@@ -28,6 +29,8 @@ const App = () => {
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="AddNotes" component={AddNotes} />
+        <Stack.Screen name="Notes" component={Notes} />
+
       </Stack.Navigator>
     </NavigationContainer>
   )
