@@ -7,9 +7,35 @@ const Notes = ({ route, navigation }) => {
   const data = route.params?.data || [];
 
   const renderNoteItem = ({ item }) => (
-    <View style={{ margin: 10 }}>
-      <Text>Title: {item.title}</Text>
-      <Text>Notes: {item.notes}</Text>
+    <View
+      style={{
+        marginHorizontal: 16,
+        marginVertical: 8,
+        padding: 16,
+        backgroundColor: '#f5f5f5', // Background color
+        borderRadius: 8,
+        elevation: 2, // Shadow for Android
+        shadowColor: 'rgba(0, 0, 0, 0.1)', // Shadow for iOS
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 1,
+      }}
+    >
+      <Text
+        style={{
+          fontSize: 18,
+          fontWeight: 'bold',
+          marginBottom: 8,
+        }}
+      >
+        Title: {item.title}
+      </Text>
+      <Text
+        style={{
+          fontSize: 16,
+        }}
+      >
+        Notes: {item.notes}
+      </Text>
     </View>
   );
 
