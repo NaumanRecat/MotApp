@@ -1,50 +1,24 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from 'react-native';
-import { Slider } from '@react-native-assets/slider';
+import React from 'react';
+import { View, FlatList } from 'react-native';
+import VoiceRecorderItem from './VoiceRecorderItem'; // Assuming you have the VoiceRecorderItem component from the previous example
 
 const Voice = () => {
-
-    const [recording, setRecording] = useState(false);
-    const [sliderValue, setSliderValue] = useState(0);
-
-    // Function to handle the slider value change
-    const handleSliderChange = (value) => {
-        setSliderValue(value);
-    };
-
-    // Function to handle the recording button press
-    const handleRecordButtonPress = () => {
-        // Toggle recording state when the button is pressed
-        setRecording(!recording);
-    };
-
+    // Define the number of voice recording cards you want to display
+    const numberOfCards = 20;
+  
+    // Create an array of numbers to use as keys
+    const data = Array.from({ length: numberOfCards }, (_, index) => index);
+  
     return (
-        <View style={{ flex: 1}}>
-            <Slider
-                value={sliderValue}
-                minimumValue={0}
-                maximumValue={1}
-                step={0.01}
-                minimumTrackTintColor="grey"
-                maximumTrackTintColor="grey"
-                thumbTintColor="darkcyan"
-                onValueChange={handleSliderChange}
-                style={{ width: 300 }}
-            />
-            <TouchableOpacity
-                onPress={handleRecordButtonPress}
-                style={{
-                    marginTop: 20,
-                    backgroundColor: recording ? 'red' : 'green',
-                    padding: 20,
-                    borderRadius: 10,
-                }}
-            >
-                <Text style={{ color: 'white', fontSize: 18 }}>
-                    {recording ? 'Stop Recording' : 'Start Recording'}
-                </Text>
-            </TouchableOpacity>
-        </View>
-    )
-}
-export default Voice
+      <View style={{ flex: 1 }}>
+        <FlatList
+          data={data}
+          keyExtractor={(item) => item.toString()}
+          renderItem={({ item }) => <VoiceRecorderItem key={item} />}
+        />
+      </View>
+    );
+  };
+  
+  export default Voice;
+  
