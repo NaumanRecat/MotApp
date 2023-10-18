@@ -12,6 +12,9 @@ import TabNav from './screen/TabNav';
 import TopNavBar from './screen//TopNavBar';
 import AddNotes from './screen/AddNotes';
 import Notes from "./screen/Notes";
+import VoiceControl from "./screen/VoiceControl";
+import AddRecipients from "./screen/AddRecipents";
+
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +23,7 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+      <Stack.Screen name="AddRecipients" component={AddRecipients} options={{ headerShown: false }}/>
         <Stack.Screen name="TabNav" component={TabNav} options={{ headerShown: false }}/>
         <Stack.Screen name="TopNavBar" component={TopNavBar} options={{ headerShown: false }}/>
         <Stack.Screen name="SplashScreen" component={SplashScreen} />
@@ -30,6 +34,7 @@ const App = () => {
         <Stack.Screen name="Registration" component={Registration} />
         <Stack.Screen name="AddNotes" component={AddNotes} />
         <Stack.Screen name="Notes" component={Notes} />
+        <Stack.Screen name="VoiceControl" component={VoiceControl} options={{ headerShown: false }}/>
 
       </Stack.Navigator>
     </NavigationContainer>
